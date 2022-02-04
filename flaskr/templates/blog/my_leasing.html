@@ -1,0 +1,27 @@
+{%extends 'base.html' %}
+
+{% block head%}
+    <title>My Leasing</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='my_leasing.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+{% endblock %}
+
+{%block body %}
+      <div class="main-container effect-on-hover">
+        <h3><a href="{{ url_for('main') }}" class="home-link">Home <i class="fa fa-home"></i></a></h3>
+        <h3>My Leasing</h3>    
+        {% for lease in all_leases %}
+            <div class="lease-container effect-on-hover">
+                <h4>Lease Name</h4>
+                <ul>
+                    <li>Daily Income <br> {{lease[0]}}</li>
+                    <li>Total Income <br> {{lease[1]}}</li>
+                    <li>Leased Days <br> {{lease[2]}}</li>
+                    <li>Accumulated Income <br> {{lease[3]}}</li>
+                </ul>
+                <p class="lease-status">Ongoing</p>
+            </div>
+        {% endfor%}
+      </div>
+{% endblock body %}

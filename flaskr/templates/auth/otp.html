@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='auth.css')}}">
+{% endblock %}
+
+{% block body %}
+    <div class="main-container">
+        <form id="login register" action="#" method="POST">
+            <h1>Enter OTP</h1>
+
+            <div>
+                {% with messages = get_flashed_messages(with_categories=True) %}
+                    {% if messages %}
+                        {% for message in messages %}
+                        <div class="form-error-msg">{{ message[1] }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            <div>
+                <input class="input-field" type="text" name="otp" placeholder="Enter OTP" required>
+            </div>
+            <button class="continue-btn" type="submit" id="continue-btn-register" name="continue-button" value="submit">Continue</button>
+
+            <p>
+                <a href="{{ url_for('auth.login') }}" class="link">Resend OTP</a>
+            </p>
+        </form> 
+      </div>
+{% endblock body %}

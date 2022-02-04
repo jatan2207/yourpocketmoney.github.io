@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='my.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+{% endblock %}
+
+{% block body %}
+      <div class="main-container effect-on-hover">
+        <h3><a href="{{ url_for('main') }}" class="home-link">Home <i class="fa fa-home"></i></a></h3>
+        <h3>My Account</h3>    
+        <i class="fas fa-user"></i>
+        <div class="user-id-container"><a id="user-id">ID: {{ session['user_id'] }} </a></div>
+        <div class="info">
+            <ul class="effect-on-hover">
+                <li>Availabe Coins <br>${{ user_data[0] }}</li>
+                <li>Balance <br>${{ user_data[1] }}</li>
+                <li>Daily Income <br>${{ user_data[2] }}</li>
+                <li>Total Income <br>${{ user_data[3] }}</li>
+        </div>
+        <nav class="main-nav">
+            <ul class="effect-on-hover">
+                <li><a href="{{ url_for('user.withdraw') }}">Withdraw</a></li>
+                <li><a href="withdrawal-record.html">Withdrawal Record</a></li>
+                <li><a href="revenue-record.html">Revenue Record</a></li>
+                <li><a href="#">App Download</a></li>
+                <li><a href="#">Bank Account</a></li>
+                <li><a id="logout" href="{{ url_for('auth.logout') }}">Log Out</a></li>
+            </ul>
+        </nav>
+      </div>
+  {% endblock body %}

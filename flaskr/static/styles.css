@@ -1,0 +1,193 @@
+.main-nav ul{
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.main-nav a{
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem;
+}
+
+.main-nav a:not(.register):hover{
+    color: #adadad;
+}
+
+.logo{
+    margin: 2rem;
+}
+
+.logo h3, i{
+    padding-left: 0.1rem;
+    display: inline;
+    transition: .2s ease-in-out;
+    transform: scale(1.2);
+}
+
+.logo i:hover{
+    transform: scale(1.5);
+    animation: spin .7s;
+}
+
+ @keyframes spin { 
+        from { 
+            transform: rotate(0deg); 
+        } to { 
+            transform: rotate(360deg); 
+        }
+    }
+
+.main-header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-between; 
+    margin: 0;
+    align-items: center;
+    height: 60px;
+}
+
+.coin-center{
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    transition: transform .2s ease-in-out;
+    margin: 5%;
+}
+
+
+
+.coin-center h3{
+    padding:2% 0 2% 0;
+    text-align: center;
+}
+
+.coin-center h3 span{
+    border-radius: 10px;
+    padding: 1% 6%;
+    margin: 0;
+    font-size: 2rem;
+    background-color: rgb(88, 101, 242);
+}
+
+.coin-center ul{
+    display: flex;
+    padding: 2%;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+.coin-center li{
+    padding: 2%;
+    overflow-wrap: anywhere;
+}
+
+.navigator ul{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    text-align: center;
+}
+
+.navigator ul li{
+    padding: 1rem;
+}
+
+.navigator a{
+    color: white;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.navigator a:hover{
+    color: #adadad;
+}
+
+.register{
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    transition: 500ms ease;
+}
+
+.register:hover{
+    color: transparent;
+}
+
+.equipment {
+    margin: 2rem;
+    box-shadow: 0 0 1em 0em rgb(0, 0, 0, 0.5);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.equipment ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 2rem;
+}
+
+.equipment h4{
+    font-size: 1.8rem;
+    padding-top: 2rem;
+}
+
+.buy-now-button{
+    font-family: inherit;
+    font-size: 1rem;
+    color: white;
+    margin-top: 1rem;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: rgb(88, 101, 242);
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.buy-now-button a{
+    color: white;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: none;
+}
+
+.buy-now-button:hover{
+    background-color: rgb(8, 8, 255);
+    transform: scale(1.2);
+}
+
+.buy-now-button:active{
+    transform: scale(0.9);
+}
+
+@media only screen and (max-width: 550px){
+    .equipment ul{
+        grid-template-columns: 1fr;
+    }
+
+    .navigator ul{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* footer/about us */
+
+#about-us-text{
+    font-size: 0.85rem;
+    text-align: center;
+    line-height: 1.8;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.footer-container{
+    box-shadow: 0 0 1.3em 0.5em rgb(0, 0, 0, 0.5);
+    margin: 3rem;
+    border-radius: 0.5rem; 
+}
+
+#footer-head{
+    padding-top: 2rem;
+    text-align: center;
+}

@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    font-size: 1.1rem;
+    color: white;
+    height: 100%;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main-container{
+    text-align: center;
+    box-shadow: 0 0 1.3em 0.5em rgb(0, 0, 0, 0.5);
+    margin: 2rem;
+    padding-bottom: 2rem;
+    border-radius: 0.5rem;
+}
+
+.main-container h1{
+    padding-top: 2rem;
+}
+
+.det-p{
+    display: inline-block;
+    margin: 2rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0 1.3em 0.5em rgb(0, 0, 0, 0.5);
+    line-height: 2rem;
+    border-radius: 0.5rem;
+}
+
+#det-p-1{
+    padding-left: 3.25rem;
+    padding-right: 3.25rem;
+}
+
+.effect-on-hover:hover{
+    transform: scale(1.01);
+    border-color: #adadad;
+}
+
+.effect-on-hover{
+    border: 2px solid transparent;
+    transition: transform .2s ease-in-out;
+}
+
+.withdraw-input-container{
+    margin: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1.3em 0.5em rgb(0, 0, 0, 0.5);
+}
+
+.input-container input[type="text"]{
+    padding: 0.5rem;
+    margin: 1rem;
+    text-align: center;
+    outline: none;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    background-color: #eeeeee;
+}
+
+.input-container input[type="text"]:hover{
+    border-color: #009579;
+    background-color: white;
+}
+
+.withdraw-input-container button{
+    padding: 0.5rem 4rem;
+    text-align: center;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    border: none;
+    background: rgb(88, 101, 242);
+    font-family: inherit;
+    color: inherit;
+    font-size: 1rem;
+    transition: .2s ease-in-out
+}
+
+.withdraw-input-container button:hover{
+    background: blue;
+    transform: scale(1.1)
+}
+
+.withdraw-input-container button:active{
+    transform: scale(0.9);
+}
+
+.home-link{
+    margin-left: 1rem;
+    color: white;
+    text-decoration: none;
+    padding-right: 85%;
+    text-align: left;
+    line-height: 1rem;
+    display: inline-flex;
+}
+
+.fa-home{
+    padding-left: 1rem;
+}
+
+.home-link:hover{
+    color: #adadad;
+}

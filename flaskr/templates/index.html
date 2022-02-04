@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Your Pocket Money</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+
+{% block body %}
+    <!--<div class="alert">
+        <span class="alert-close-button" onclick="this.parentElement.style.display = 'none';">&times</span>
+        Some alert
+    </div>--!>
+    <header class="main-header">
+        <div class="logo">
+            <i class="fab fa-superpowers"></i>
+            <h3>Your Pocket Money</h3>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                {% if g.user %}
+                    <li><a href="{{ url_for('user.my') }}"><i class="fas fa-user"></i></a></li>
+                    <li><a href="{{ url_for('auth.logout') }}">LogOut</a></li>
+                {% else %}
+                    <li><a href="/auth/login">Login</a></li>
+                    <li><a href="/auth/register" class="register">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="coin-center navigator effect-on-hover">
+                <ul>
+                    <li>
+                        <a href="{{ url_for('user.withdraw') }}">Withdrawal<br>
+                            <a href="{{ url_for('user.withdraw') }}"><i class="fas fa-money-bill-wave"></i></a>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about-us-text">About Us<br>
+                            <a href="#about-us-text"><i class="fas fa-users"></i></a>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="customer_support.html">Customer Support<br>
+                            <a href="customer_support.html"><i class="fas fa-headset"></i></a>
+                        </a>
+                    </li>
+                        
+                </ul>
+            </div>
+        </section>
+        <section>
+
+            <div class="coin-center effect-on-hover">
+                <h3><span>Balance Center</span></h3>
+
+                {% for i in range(4) %}
+                    <div class="equipment effect-on-hover">
+                        <h4>Equipment {{i + 1}}</h4>
+                        <ul>
+                            <li>Daily Income <br>₹ {{ equipments_data[i][0] }} </li>
+                            <li>Total Income <br>₹ {{ equipments_data[i][1] }}</li>
+                            <li>Profit Gain <br>₹ {{ equipments_data[i][2] }}</li>
+                            <li>Rental Expenses <br>₹ {{ equipments_data[i][3] }}</li>
+                        </ul>
+                        <button class="buy-now-button" onclick="window.location.href='{{ url_for('user.buy_equipment', equipment_index=i) }}'">Buy Now</button>
+                    </div>
+                {% endfor %}
+                
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container effect-on-hover">
+            <h3 id="footer-head">About Us</h3>
+            <p id="about-us-text">
+            YourPocketMoney Telecommunications Holdings Limited (0315.HK), listed in Hong Kong since 1996 and a subsidiary of Sun Hung Kai Properties Limited, is a leading telecommunications provider with operating subsidiaries in Hong Kong and Macau, offering voice, multimedia and mobile broadband services, as well as fixed fibre broadband services for both consumer and corporate markets. smartpower spearheaded 5G development in Hong Kong since May 2020, with the launch of its territory-wide 5G services.<br>
+
+            YourPocketMoney is your smart partner that delivers a trusted and connected experience through our high quality network, people-driven products and services combined with innovation, passion and understanding of customer needs.<br>
+
+                YourPocketMoney differentiates our content, excellent customer service, business and consumer products for all our Hong Kong customers, allowing them to live and feel smarter everyday. This strong presence is also backed by expert technical know-how, over 30 stores across Hong Kong, our 5 core brands and our innovative business strategies arm.
+                    </p>
+        </div>
+    </footer>
+{%endblock body %}

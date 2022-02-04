@@ -1,0 +1,66 @@
+:root{
+    --gradient: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+    --box-shadow: 0 0 1.3em 0.5em rgb(0, 0, 0, 0.5); 
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0 auto;
+    margin: 0 auto;
+    position: relative;
+    max-width: 1200px;
+    font-family: Poppins, sans-serif;
+    font-size: 1.1rem;
+    color: white;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    background-attachment: fixed;
+    height: 100%;
+    font-weight: bold;
+    background-size: 400%;
+    animation: bg-animation 5s infinite alternate;
+}
+
+.effect-on-hover:hover{
+    transform: scale(1.01);
+    border-color: #adadad;
+}
+
+.effect-on-hover{
+    border: 2px solid transparent;
+    transition: transform .2s ease-in-out;
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
+}
+
+.alert {
+    margin: 0 2rem;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    background-color:#ED4F32;
+    padding: 0 1.3rem;
+    border-radius: .3rem;
+    opacity: 1;
+}
+
+.alert-close-button {
+    cursor: pointer;
+    padding: 0.1rem;
+    transition: .2s ease-out;
+}
+
+.alert-close-button:hover {
+    color: #adadad;
+}
